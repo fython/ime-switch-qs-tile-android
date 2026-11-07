@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">输入法切换</string>
+    <string name="tile_label">切换输入法</string>
+</resources>
