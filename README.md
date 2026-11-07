@@ -1,11 +1,27 @@
-# 输入法切换磁贴
+# Input Method Switch Quick Settings Tile
 
-一个没有桌面启动图标的 Android 应用。磁贴通过短暂的透明代理 Activity 获取输入焦点，再请求系统显示选择器。点击快捷设置中的“切换输入法”磁贴，调用 Android 系统的输入法选择器；应用本身不会读取输入内容，也不会直接修改输入法设置。
+[简体中文](README.zh-CN.md)
 
-## 构建和安装
+An Android app that adds a Quick Settings tile for opening the system input method picker. It uses a short-lived transparent Activity to obtain input focus before requesting the picker. The app does not read typed text or change input method settings directly, and it has no launcher icon.
 
-需要 JDK 17 或更高版本、Android SDK Platform 35 和 Build Tools 35.0.0。使用 Android Studio 打开本目录，等待 Gradle 同步，然后运行 `./gradlew assembleDebug`；APK 位于 `app/build/outputs/apk/debug/app-debug.apk`。安装到 Android 7.0（API 24）或更高版本的设备。
+## Build and install
 
-安装后下拉展开快捷设置，点击编辑（铅笔）按钮，将“切换输入法”拖入快捷设置区域。点击该磁贴即可打开系统选择器。至少需要事先在系统设置中启用所需输入法；选择器的显示形式和可用性可能因系统版本、设备厂商及锁屏状态而异。
+You need JDK 17 or later, Android SDK Platform 35, and Build Tools 35.0.0. Open the project in Android Studio and let Gradle sync, or run:
 
-该应用没有桌面启动入口，因此安装后不会出现在启动器应用列表中；可在系统设置的应用列表中卸载。
+```sh
+./gradlew assembleDebug
+```
+
+The APK is written to `app/build/outputs/apk/debug/app-debug.apk`. Install it on a device running Android 7.0 (API 24) or later.
+
+GitHub Actions also builds an installable debug APK on pushes, pull requests, and manual runs. Download `input-method-switch-debug-apk` from the workflow run’s artifacts. The debug APK uses a development signing key and is intended for testing.
+
+## Use
+
+Expand Quick Settings, tap the edit (pencil) button, and add the input method switch tile. Tap the tile to open the system picker. Enable the input methods you want to use in system settings first. The picker's appearance and availability may vary by Android version, device manufacturer, and lock-screen state.
+
+The app has no launcher entry. To uninstall it, use the system's app settings.
+
+## License
+
+This project is licensed under the [GNU General Public License v3.0](LICENSE).

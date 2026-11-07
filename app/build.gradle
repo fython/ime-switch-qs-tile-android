@@ -7,6 +7,14 @@ android {
     compileSdk 35
     buildToolsVersion "35.0.0"
 
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt')
+        }
+    }
+
     defaultConfig {
         applicationId 'app.gwo.utils.imeswitchtile'
         minSdk 24
